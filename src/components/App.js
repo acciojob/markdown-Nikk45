@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+// import { marked } from "marked";
+import React, { useEffect, useState } from "react";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 const App=()=>{
 
@@ -7,7 +9,7 @@ const App=()=>{
 
 
     // useEffect(() => {
-    //     document.getElementById("output").innerHTML = marked(markdownText);
+    //     document.getElementById("output").innerHTML = <ReactMarkdown></ReactMarkdown>;
     //   }, [markdown]);    
     
     const handleMarkDown=(e)=>{
@@ -22,7 +24,9 @@ const App=()=>{
                 </textarea>
             </div>
             <div className="preview">
-                <h1 id="output">{markdown}</h1>
+                <div id="output">
+                <ReactMarkdown>{markdown}</ReactMarkdown>
+                </div>
             </div>
         </div>
     )
