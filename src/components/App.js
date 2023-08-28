@@ -5,19 +5,24 @@ const App=()=>{
 
     const [markdown, setMarkDown] = useState('')
 
+
+    // useEffect(() => {
+    //     document.getElementById("output").innerHTML = marked(markdownText);
+    //   }, [markdown]);    
+    
     const handleMarkDown=(e)=>{
         setMarkDown(e.target.value)
     }
 
     return(
-        <div>
+        <div className="app">
             <div className="markdown">
                 <textarea value={markdown} onChange={handleMarkDown} 
                 placeholder="Write something...">                    
                 </textarea>
             </div>
             <div className="preview">
-                <div id="output">{markdown}</div>
+                <h1 id="output">{markdown}</h1>
             </div>
         </div>
     )
